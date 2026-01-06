@@ -785,7 +785,42 @@
             <p>84 photos</p>
             <p>Janvier 2024</p>
         </article>
+
+		<article class="card detailed"
+            data-title="Escargots"
+            data-date="Mai 2024"
+            data-location="Blancheville, Haute-Marne — Maisonnette au dessus de l'abbaye de Septfontaines"
+			data-location-maps="https://maps.app.goo.gl/uppRwNYN5NnuU2QEA"
+            data-photos="28 photos"
+            data-photos-text="Petit test que je voulais faire."
+			data-cloud-text="Rendu bon."
+            data-model-text="Rendu très bien mais j\'aurais peut être dû supprimer les zones floues."
+            data-cloud-video="https://www.youtube.com/embed/F3mZo-v2vso?si=EJ6-rIjWASZ_v9HU"
+            data-model-video="https://www.youtube.com/embed/YmAD7vNlcFQ?si=1HlAs9ynvfOLeni_"
+        >
+            <img src="https://i.postimg.cc/Kzz42kNR/BLANCHEVILLE-escargot.jpg" alt="Escargots">
+            <h3>Escargots - Blancheville</h3>
+            <p>28 photos</p>
+            <p>Mai 2024</p>
+        </article>
 		
+		<article class="card detailed"
+            data-title="Arbre mort"
+            data-date="Mai 2024"
+            data-location="Arc-en-Barrois, Haute-Marne — Bord du cimetière de la commune"
+			data-location-maps="https://maps.app.goo.gl/W9KtqDsVJPLg82kJ8"
+            data-photos="60 photos"
+            data-photos-text="Test que je voulais faire sur un arbre."
+			data-cloud-text="Rendu plutôt bon même sur le côté où j'étais à contrejour."
+            data-model-text="Rendu très bien sur l'écorce mais j'aurais peut être dû supprimer les zones de trous."
+            data-cloud-video="https://www.youtube.com/embed/elyPrgEupGU?si=3K3qaDH5IwSnLW8r"
+            data-model-video="https://www.youtube.com/embed/M8CvkkYMc3k?si=XNrjf1gToc1FrmHq"
+        >
+            <img src="https://i.postimg.cc/dtkxBg68/ARC-EN-BARROIS-arbre-mort.jpg" alt="Arbre mort">
+            <h3>Arbre mort - Arc-en-Barrois</h3>
+            <p>60 photos</p>
+            <p>Mai 2024</p>
+        </article>
     </div>
 </section>
 
@@ -872,7 +907,6 @@ document.querySelectorAll(".card.detailed").forEach(card => {
 		document.getElementById("detail-photos-count").textContent =
 			card.dataset.photos;
 
-
         document.getElementById("detail-photos").textContent = card.dataset.photosText;
         document.getElementById("detail-cloud").textContent = card.dataset.cloudText;
         document.getElementById("detail-model").textContent = card.dataset.modelText;
@@ -891,9 +925,6 @@ closeDrawer.onclick = () => {
     drawer.classList.remove("open");
     document.body.style.overflow = "";
 };
-
 </script>
-
-
 </body>
 </html>
