@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu vidéo musée</title>
+    <style>
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		font-family: system-ui, sans-serif;
+		background: #f4f4f4;
+		color: #222;
+	}
+	
+	/* NAV */
+	.site-header {
+		background: #111;
+		position: sticky;
+		top: 0;
+		z-index: 1000;
+	}
+	.nav {
+		max-width: 1200px;
+		margin: auto;
+		padding: 15px 20px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.nav-left {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+	}
+	.site-title {
+		font-weight: 600;
+		color: white;
+	}
+	.nav-links {
+		display: flex;
+		list-style: none;
+		gap: 20px;
+	}
+	.nav-links a {
+		color: #bbb;
+		text-decoration: none;
+		font-size: 0.95em;
+	}
+	.nav-links a:hover,
+	.nav-links a.active {
+		color: white;
+		border-bottom: 2px solid white;
+	}
+
+
+      
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        iframe {
+            width: 80vw;
+            height: 80vh;
+            border: none;
+        }
+	/* FOOTER */
+	.site-footer {
+		text-align: center;
+		padding: 20px;
+		font-size: 0.8em;
+		color: #777;
+	}    
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav">
+            <div class="nav-left">
+                <span class="site-title">Sujets</span>
+            </div>
+    
+            <ul class="nav-links">
+                <li><a href="vieux-chaumont.html">Vieux Chaumont</a></li>
+                <li><a href="jeu-musee.html">Jeu musée</a></li>
+                <li><a href="sujets.html" class="active">Sujets</a></li>
+                <li><a href="old-sujets.html">Old sujets</a></li>
+                <li><a href="index.html">Accueil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  
+    <div class="content">
+        <iframe src="https://itch.io/embed-upload/10929995?color=333333" allowfullscreen=""></iframe>
+    </div>
+    <footer class="site-footer">
+        Réalisé par moi-même – pour mon propre plaisir
+    </footer>
+</body>
+</html>
