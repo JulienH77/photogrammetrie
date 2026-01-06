@@ -11,14 +11,13 @@
             margin: 0;
             padding: 0;
         }
-
         body {
             font-family: system-ui, sans-serif;
             background: #f4f4f4;
             color: #222;
             line-height: 1.6;
         }
-
+		
         /* NAV */
         .site-header {
             background: #111;
@@ -26,7 +25,6 @@
             top: 0;
             z-index: 1000;
         }
-
         .nav {
             max-width: 1200px;
             margin: auto;
@@ -35,7 +33,6 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .nav-left {
             display: flex;
             align-items: center;
@@ -46,26 +43,23 @@
             font-weight: 600;
             color: white;
         }
-
         .nav-links {
             display: flex;
             list-style: none;
             gap: 20px;
         }
-
         .nav-links a {
             color: #bbb;
             text-decoration: none;
             font-size: 0.95em;
         }
-
         .nav-links a:hover,
         .nav-links a.active {
             color: white;
             border-bottom: 2px solid white;
         }
 
-        /* MAIN CONTENT */
+        /* MAIN  */
         main {
             max-width: 1200px;
             margin: 40px auto;
@@ -74,31 +68,28 @@
             flex-direction: column;
             gap: 40px;
         }
-
         section {
             background: white;
             padding: 30px;
             border-radius: 6px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
-
         h1, h2 {
             margin-bottom: 15px;
         }
-
         p {
             margin-bottom: 10px;
             color: #444;
         }
-
+		
         /* MAP */
         .map-container iframe {
             width: 100%;
-            height: 500px;
+            height: 650px;
             border: none;
             border-radius: 6px;
         }
-
+		
         /* FOOTER */
         .site-footer {
             text-align: center;
@@ -110,73 +101,69 @@
 </head>
 
 <body>
+	<header class="site-header">
+	    <nav class="nav">
+	        <div class="nav-left">
+	            <span class="site-title">Accueil</span>
+	        </div>
+	        <ul class="nav-links">
+	            <li><a href="vieux_chaumont.html">Vieux Chaumont</a></li>
+	            <li><a href="jeu_video.html">Jeu musée</a></li>
+	            <li><a href="sujets.html">Sujets</a></li>
+	            <li><a href="index.html" class="active">Accueil</a></li>
+	        </ul>
+	    </nav>
+	</header>
 
-<header class="site-header">
-    <nav class="nav">
-        <div class="nav-left">
-            <span class="site-title">Jeu musée</span>
-        </div>
-
-        <ul class="nav-links">
-            <li><a href="vieux-chaumont.html">Vieux Chaumont</a></li>
-            <li><a href="jeu-musee.html">Jeu musée</a></li>
-            <li><a href="sujets.html">Sujets</a></li>
-            <li><a href="index.html" class="active">Accueil</a></li>
-        </ul>
-    </nav>
-</header>
-
-<main>
-
-    <section>
-		<h1>Un projet personnel autour du patrimoine et de la photogrammétrie</h1>
-		<p>
-            Ce site est un projet personnel, né à la fois de mon envie de découvrir le patrimoine et l’histoire locale, et de ma volonté de rattraper un domaine que j’ai mal suivi à l’école (oui, on apprend parfois mieux après...) : la photogrammétrie.
-        </p>
-        <p>
-            À travers ce projet, j’ai commencé à remodeliser en 3D différents sujets, ce qui m’a permis d’en apprendre énormément sur les territoires que je visitais, aussi bien du point de vue historique que de l’urbanisme. Chaque modélisation est devenue une excuse pour creuser un lieu, comprendre son évolution, ses formes, ses usages.
-        </p>
-		<p>
-			Au départ, le but était simple : montrer à ma famille mon savoir-faire, mais aussi mettre en valeur le patrimoine local. Puis, naturellement, l’ambition a grandi. Plus de sujets, plus de diversité, des territoires plus éloignés.
-		</p>
-    </section>
-
-    <section>
-        <h2>Les projets</h2>
-        <p>
-            Un jour, une idée s’est imposée : créer une sorte de jeu vidéo “musée”, rassemblant l’ensemble de mes sujets, modélisés à une échelle proche du réel. L’objectif était clair : permettre aux personnes qui regardent mes vidéos ou mes rendus de réellement comprendre les ordres de grandeur, ce que les images seules ne montrent pas toujours.
-        </p>
-		
-		<p>
-			J’ai donc réalisé un premier test, volontairement très simple, sous Unity, que vous pouvez découvrir sur la page Jeu musée.
-		</p>
-		<p>
-			J’ai donc réalisé un premier test, volontairement très simple, sous Unity, que vous pouvez découvrir sur la page Jeu musée.
-		</p>
-    </section>
-
-    <section>
-        <h2>Méthodes et outils</h2>
-        <p>
-            Pour la réalisation de ces projets, j’utilise un appareil photo <b>Canon EOS 60D</b>, équipé d’<b>un objectif 55–135 mm</b>. Mon boîtier souffre cependant d’un problème d’exposition : les photos ont tendance à tirer fortement vers le rouge, ce qui nécessite des ajustements en post-traitement.
-        </p>
-		
-		<p>
-			Côté logiciels, j’ai d’abord travaillé avec des scripts développés par mes professeurs et moi-même, en visualisant les résultats sur CloudCompare, puis en générant les modèles 3D via MeshLab.
-			Aujourd’hui, mon flux de travail a évolué : j’utilise principalement <b>Meshroom</b> pour la photogrammétrie et <b>Blender</b> pour le traitement et la mise en forme finale des modèles.
-		</p>
-    </section>
-
-    <section class="map-container">
-        <h2>Carte interactive</h2>
-        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1EySmgUSorrqlogkygWjPOJ03PZUCefI&ehbc=2E312F&noprof=1" allowfullscreen></iframe>
-    </section>
-
-</main>
-
-<footer class="site-footer">
-    Réalisé par moi-même – pour mon propre plaisir
-</footer>
-
+	<main>
+	
+	    <section>
+			<h1>Un projet personnel autour du patrimoine et de la photogrammétrie</h1>
+			<p>
+	            Ce site est un projet personnel, né à la fois de mon envie de découvrir le patrimoine et l’histoire locale, et de ma volonté de rattraper un domaine que j’ai mal suivi à l’école (oui, on apprend parfois mieux après...) : la photogrammétrie.
+	        </p>
+	        <p>
+	            À travers ce projet, j’ai commencé à remodeliser en 3D différents sujets, ce qui m’a permis d’en apprendre énormément sur les territoires que je visitais, aussi bien du point de vue historique que de l’urbanisme. Chaque modélisation est devenue une excuse pour creuser un lieu, comprendre son évolution, ses formes, ses usages.
+	        </p>
+			<p>
+				Au départ, le but était simple : montrer à ma famille mon savoir-faire, mais aussi mettre en valeur le patrimoine local. Puis, naturellement, l’ambition a grandi. Plus de sujets, plus de diversité, des territoires plus éloignés.
+			</p>
+	    </section>
+	
+	    <section>
+	        <h2>Les projets</h2>
+	        <p>
+	            Un jour, une idée s’est imposée : créer une sorte de jeu vidéo “musée”, rassemblant l’ensemble de mes sujets, modélisés à une échelle proche du réel. L’objectif était clair : permettre aux personnes qui regardent mes vidéos ou mes rendus de réellement comprendre les ordres de grandeur, ce que les images seules ne montrent pas toujours.
+	        </p>
+			
+			<p>
+				J’ai donc réalisé un premier test, volontairement très simple, sous Unity, que vous pouvez découvrir sur la page Jeu musée.
+			</p>
+			<p>
+				J’ai donc réalisé un premier test, volontairement très simple, sous Unity, que vous pouvez découvrir sur la page Jeu musée.
+			</p>
+	    </section>
+	
+	    <section>
+	        <h2>Méthodes et outils</h2>
+	        <p>
+	            Pour la réalisation de ces projets, j’utilise un appareil photo <b>Canon EOS 60D</b>, équipé d’<b>un objectif 55–135 mm</b>. Mon boîtier souffre cependant d’un problème d’exposition : les photos ont tendance à tirer fortement vers le rouge, ce qui nécessite des ajustements en post-traitement.
+	        </p>
+			
+			<p>
+				Côté logiciels, j’ai d’abord travaillé avec des scripts développés par mes professeurs et moi-même, en visualisant les résultats sur CloudCompare, puis en générant les modèles 3D via MeshLab.
+				Aujourd’hui, mon flux de travail a évolué : j’utilise principalement <b>Meshroom</b> pour la photogrammétrie et <b>Blender</b> pour le traitement et la mise en forme finale des modèles.
+			</p>
+	    </section>
+	
+	    <section class="map-container">
+	        <h2>Carte interactive</h2>
+	        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1EySmgUSorrqlogkygWjPOJ03PZUCefI&ehbc=2E312F&noprof=1" allowfullscreen></iframe>
+	    </section>
+	
+	</main>
+	<footer class="site-footer">
+	    Réalisé par moi-même – pour mon propre plaisir
+	</footer>
 </body>
 </html>
