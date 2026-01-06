@@ -2,168 +2,255 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <title>New sujets – Blender</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galerie de Vidéos</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
-        }
-        .video {
-            width: 40%;
-            margin: 20px;
-            text-align: center;
-            cursor: pointer;
-        }
-        .video img {
-            max-height: 300px;
-            transition: transform 0.5s ease-in-out;
-            border-radius: 20px;
-        }
-        .video img:hover {
-            transform: scale(1.05);
-            transition: transform 0.3s ease-in-out;
-        }
-        .footer {
-            height: 20px;
-            width: 100%;
-            color: #757575;
-            text-align: center;
-            padding: 10px;
-            font-size: 0.8em;
-        }
-        /* Styles pour la popup */
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        .popup {
-            width: 80%;
-            max-height: 90vh;
-            background: none;
-            padding: 0;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .popup iframe {
-            width: 90%;
-            height: 80vh;
-            border: none;
-        }
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 32px;
-            cursor: pointer;
-            color: white;
-        }
-    </style>
+	<style>
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		font-family: system-ui, sans-serif;
+		background: #f4f4f4;
+		color: #222;
+	}
+	
+	/* NAV */
+	.site-header {
+		background: #111;
+		position: sticky;
+		top: 0;
+		z-index: 1000;
+	}
+	.nav {
+		max-width: 1200px;
+		margin: auto;
+		padding: 15px 20px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.nav-left {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+	}
+	.site-title {
+		font-weight: 600;
+		color: white;
+	}
+	.nav-links {
+		display: flex;
+		list-style: none;
+		gap: 20px;
+	}
+	.nav-links a {
+		color: #bbb;
+		text-decoration: none;
+		font-size: 0.95em;
+	}
+	.nav-links a:hover,
+	.nav-links a.active {
+		color: white;
+		border-bottom: 2px solid white;
+	}
+	
+	/* CONTENU */
+	.content {
+		max-width: 1200px;
+		margin: 40px auto;
+		padding: 0 20px;
+	}
+	h1 {
+		margin-bottom: 30px;
+	}
+	
+	/* GALERIE */
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+		gap: 30px;
+	}
+	.card {
+		background: white;
+		border-radius: 16px;
+		overflow: hidden;
+		cursor: pointer;
+		transition: transform 0.25s ease, box-shadow 0.25s ease;
+	}
+	.card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+	}
+	.card img {
+		width: 100%;
+		height: 200px;
+		object-fit: cover;
+	}
+	.card h3 {
+		padding: 15px 15px 5px;
+		font-size: 1em;
+	}
+	.card p {
+		padding: 0 15px 15px;
+		font-size: 0.85em;
+		color: #666;
+	}
+
+	/* FOOTER */
+	.site-footer {
+		text-align: center;
+		padding: 20px;
+		font-size: 0.8em;
+		color: #777;
+	}
+	
+	/* POPUP */
+	.overlay {
+		display: none;
+		position: fixed;
+		inset: 0;
+		background: rgba(0,0,0,0.75);
+		justify-content: center;
+		align-items: center;
+	}
+	.popup {
+		width: 80%;
+		max-width: 900px;
+	}
+	.popup iframe {
+		width: 100%;
+		height: 70vh;
+		border: none;
+	}
+	.close {
+		position: absolute;
+		top: -40px;
+		right: 0;
+		background: none;
+		border: none;
+		color: white;
+		font-size: 32px;
+		cursor: pointer;
+	}
+	</style>
 </head>
 <body>
 
-    <h1 style="text-align: center;">Mes nouveaux sujets sortant du logiciel Blender (encore en test)</h1>
-    <div class="container">
-        <div class="video" data-video="https://www.youtube.com/embed/lRjyYTqto8c?si=4h8CiSJJHFVW325j">
-            <h3>Gisant au musée de Chaumont (79 photos)</h3>
-            <img src="https://i.postimg.cc/cHrbdjv3/CHAUMONT_gisant_chevalier.jpg">
-        </div>
-        <div class="video" data-video="https://www.youtube.com/embed/19NpRxEIMDE?si=WVxJq0SwlF6HZB7U">
-            <h3>Fleur des Alpes dans le CD52 (102 photos)</h3>
-            <img src="https://i.postimg.cc/59DZ2xq2/CHAUMONT_fleur_alpes.jpg">
-        </div>
-        <div class="video" data-video="https://www.youtube.com/embed/5C5mRktcP2g?si=yEmVOCfsqr7HSPnj">
-            <h3>Gisant d'une femme au musée de Chaumont (76 photos)</h3>
-            <img src="https://i.postimg.cc/nzCkz4r5/CHAUMONT_femme_tombe.jpg">
-        </div>
-        <div class="video" data-video="https://www.youtube.com/embed/TBWhjj7lzbk?si=eBnMzEne45IyJw8j">
-            <h3>Statue d'Apollon dans le jardin du CD52 (103 photos)</h3>
-            <img src="https://i.postimg.cc/ZRxfrZpN/CHAUMONT_apollon.jpg">
-        </div>
-        <div class="video" data-video="https://www.youtube.com/embed/pJtpCpf81Ig?si=n6g-Cv-bq1V_iqgH">
-            <h3>Souche d'arbre dans le parc Sainte-Marie à Chaumont (34 photos)</h3>
-            <img src="https://i.postimg.cc/K8LCCCds/CHAUMONT-souche2.jpg">
-        </div>
-        <div class="video" data-video="https://www.youtube.com/embed/ycnfMhsE-j8?si=51y-FLQS2fzRQIxD">
-            <h3>Vase en pierre dans l'abbaye de Pont-à-Mousson (39 photos)</h3>
-            <img src="https://i.postimg.cc/cH12Hfdy/PAM_vase_pierre.jpg">
-        </div>
-        <div class="video" data-video="https://www.youtube.com/embed/GYytKWm9PoQ?si=pV18KsvYYw7FKtaf">
-            <h3>Eglise de Racine (466 photos)</h3>
-            <img src="https://i.postimg.cc/W4bnbjN8/RACINE_eglise.jpg">
-        </div>
-        <div class="video" data-video="https://www.youtube.com/embed/W6Neb0K6UYY?si=V4-GHSr_aCmNmjwa">
-            <h3>Reste d'une chapelle à Langres (78 photos)</h3>
-            <img src="https://i.postimg.cc/Hs4Ld3B2/LANGRES-Reste-chapelle.jpg">
-        </div>
-        <div class="video" data-video="https://www.youtube.com/embed/Bf_bbNWmfi8?si=GbH5EPXiseLW4cq5">
-            <h3>Test sur une rue (236 photos)</h3>
-            <img src="https://i.postimg.cc/vBdTqxMx/TEST_rue.png">
-        </div>
-        <div class="video" data-video="https://www.youtube.com/embed/">
-            <h3>Ne sert à rien</h3>
-            <img src="https://i.gifer.com/embedded/download/PbVE.gif">
-        </div>
-    </div>
+	<header class="site-header">
+		<nav class="nav">
+			<div class="nav-left">
+				<span class="site-title">New sujets</span>
+			</div>
 
-    <div class="footer">
-        Réalisé par moi-même pour mon propre plaisir
-    </div>
+			<ul class="nav-links">
+				<li><a href="vieux-chaumont.html">Vieux Chaumont</a></li>
+				<li><a href="jeu-musee.html">Jeu musée</a></li>
+				<li><a href="new-sujets.html" class="active">New sujets</a></li>
+				<li><a href="old-sujets.html">Old sujets</a></li>
+				<li><a href="index.html">Accueil</a></li>
+			</ul>
+		</nav>
+	</header>
 
-    <!-- Overlay et popup -->
-    <div class="overlay" id="overlay">
-        <div class="popup">
-            <span class="close" id="close">&times;</span>
-            <iframe id="video" src="" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
+	<main class="content">
+		<h1>Mes nouveaux sujets issus de Blender</h1>
 
-    <script>
-        // Script pour gérer la popup
-        document.addEventListener('DOMContentLoaded', function() {
-            var overlay = document.getElementById('overlay');
-            var videoFrame = document.getElementById('video');
-            var closeBtn = document.getElementById('close');
+		<section class="gallery">
+			<!-- Carte vidéo -->
+			<article class="card" data-video="https://www.youtube.com/embed/lRjyYTqto8c?si=4h8CiSJJHFVW325j">
+				<img src="https://i.postimg.cc/cHrbdjv3/CHAUMONT_gisant_chevalier.jpg" alt="Gisant chevalier">
+				<h3>Gisant – Musée de Chaumont</h3>
+				<p>79 photos</p>
+			</article>
 
-            document.querySelectorAll('.video').forEach(function(element) {
-                element.addEventListener('click', function() {
-                    var videoSrc = this.getAttribute('data-video');
-                    videoFrame.src = videoSrc;
-                    overlay.style.display = 'flex';
-                });
-            });
+			<article class="card" data-video="https://www.youtube.com/embed/19NpRxEIMDE?si=WVxJq0SwlF6HZB7U">
+				<img src="https://i.postimg.cc/59DZ2xq2/CHAUMONT_fleur_alpes.jpg" alt="Fleur des Alpes">
+				<h3>Fleur des Alpes - CD52</h3>
+				<p>102 photos</p>
+			</article>
 
-            closeBtn.addEventListener('click', function() {
-                overlay.style.display = 'none';
-                videoFrame.src = '';
-            });
+			<article class="card" data-video="https://www.youtube.com/embed/5C5mRktcP2g?si=yEmVOCfsqr7HSPnj">
+				<img src="https://i.postimg.cc/nzCkz4r5/CHAUMONT_femme_tombe.jpg" alt="Tombe femme">
+				<h3>Gisant d'une femme - Musée de Chaumont</h3>
+				<p>76 photos</p>
+			</article>
+			
+			<article class="card" data-video="https://www.youtube.com/embed/TBWhjj7lzbk?si=eBnMzEne45IyJw8j">
+				<img src="https://i.postimg.cc/ZRxfrZpN/CHAUMONT_apollon.jpg" alt="Apollon">
+				<h3>Statue d'Apollon – CD52</h3>
+				<p>103 photos</p>
+			</article>
+			
+			<article class="card" data-video="https://www.youtube.com/embed/pJtpCpf81Ig?si=n6g-Cv-bq1V_iqgH">
+				<img src="https://i.postimg.cc/K8LCCCds/CHAUMONT-souche2.jpg" alt="Souche d'arbre">
+				<h3>Souche d'arbre – Parc Sainte-Marie à Chaumont</h3>
+				<p>79 photos</p>
+			</article>
+			
+			<article class="card" data-video="https://www.youtube.com/embed/ycnfMhsE-j8?si=51y-FLQS2fzRQIxD">
+				<img src="https://i.postimg.cc/cH12Hfdy/PAM_vase_pierre.jpg" alt="Vas en pierre">
+				<h3>Vase en pierre - Abbaye de Pont-à-Mousson</h3>
+				<p>39 photos</p>
+			</article>
+			
+			<article class="card" data-video="https://www.youtube.com/embed/GYytKWm9PoQ?si=pV18KsvYYw7FKtaf">
+				<img src="https://i.postimg.cc/W4bnbjN8/RACINE_eglise.jpg" alt="Eglise">
+				<h3>Eglise – Racine (10130)</h3>
+				<p>466 photos</p>
+			</article>
+			
+			<article class="card" data-video="https://www.youtube.com/embed/W6Neb0K6UYY?si=V4-GHSr_aCmNmjwa">
+				<img src="https://i.postimg.cc/Hs4Ld3B2/LANGRES-Reste-chapelle.jpg" alt="Reste de chapelle">
+				<h3>Reste d'une chapelle – Langres</h3>
+				<p>78 photos</p>
+			</article>
+			
+			<article class="card" data-video="https://www.youtube.com/embed/Bf_bbNWmfi8?si=GbH5EPXiseLW4cq5">
+				<img src="https://i.postimg.cc/vBdTqxMx/TEST_rue.png" alt="Test sur une rue">
+				<h3>Test sur une rue – Chaumont</h3>
+				<p>236 photos</p>
+			</article>
 
-            overlay.addEventListener('click', function(event) {
-                if (event.target === overlay) {
-                    overlay.style.display = 'none';
-                    videoFrame.src = '';
-                }
-            });
-        });
-    </script>
+		</section>
+	</main>
 
+	<footer class="site-footer">
+		Réalisé par moi-même – pour mon propre plaisir
+	</footer>
+
+	<!-- Popup -->
+	<div class="overlay" id="overlay">
+		<div class="popup">
+			<button class="close" id="close">×</button>
+			<iframe id="video" allowfullscreen></iframe>
+		</div>
+	</div>
+
+	<script>
+		const overlay = document.getElementById("overlay");
+		const iframe = document.getElementById("video");
+		const closeBtn = document.getElementById("close");
+
+		document.querySelectorAll(".card").forEach(card => {
+			card.addEventListener("click", () => {
+				iframe.src = card.dataset.video;
+				overlay.style.display = "flex";
+			});
+		});
+
+		closeBtn.addEventListener("click", () => {
+			iframe.src = "";
+			overlay.style.display = "none";
+		});
+
+		overlay.addEventListener("click", e => {
+			if (e.target === overlay) {
+				iframe.src = "";
+				overlay.style.display = "none";
+			}
+		});
+	</script>
 </body>
 </html>
