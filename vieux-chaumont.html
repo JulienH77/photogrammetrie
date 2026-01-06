@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mises à jour du développement du jeu</title>
+    <style>
+/* NAV */
+	.site-header {
+		background: #111;
+		position: sticky;
+		top: 0;
+		z-index: 1000;
+	}
+	.nav {
+		max-width: 1200px;
+		margin: auto;
+		padding: 15px 20px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.nav-left {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+	}
+	.site-title {
+		font-weight: 600;
+		color: white;
+	}
+	.nav-links {
+		display: flex;
+		list-style: none;
+		gap: 20px;
+	}
+	.nav-links a {
+		color: #bbb;
+		text-decoration: none;
+		font-size: 0.95em;
+	}
+	.nav-links a:hover,
+	.nav-links a.active {
+		color: white;
+		border-bottom: 2px solid white;
+	}      
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .video-update {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .video-update h2 {
+            margin-top: 0;
+        }
+        .video-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .video-container.horizontal {
+            flex-direction: column;
+        }
+        .video-container.vertical {
+            flex-direction: row;
+        }
+        .video-container iframe {
+            width: 100%;
+            height: 450px;
+            border-radius: 5px;
+        }
+        .video-container.vertical iframe {
+            width: 25%;
+            height: 600px;
+        }
+        .description {
+            padding: 10px;
+            flex: 1;
+        }
+        .description1{
+            margin: 10% 20% 10% 5%;
+        }
+	/* FOOTER */
+	.site-footer {
+		text-align: center;
+		padding: 20px;
+		font-size: 0.8em;
+		color: #777;
+	}
+
+
+      
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav">
+            <div class="nav-left">
+                <span class="site-title">Vieux Chaumont</span>
+            </div>
+    
+            <ul class="nav-links">
+                <li><a href="vieux-chaumont.html" class="active">Vieux Chaumont</a></li>
+                <li><a href="jeu-musee.html">Jeu musée</a></li>
+                <li><a href="sujets.html">Sujets</a></li>
+                <li><a href="index.html">Accueil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+ <center><iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsPkHY0Pna_WUNCNes0f8ePPZtUzQBf7Q8xNnwhMUoot14UPRLlFhm0cgvc14GD19M1z22Z--70Ril/pubhtml?gid=145955881&single=true" 
+            width="1320" height="790"></iframe></center>
+
+
+
+    <div class="container">
+        <!-- Update 1 (Vidéo en horizontal) -->
+        <div class="video-update">
+            <h2>22/07/2024 - Premier essai sur une petite rue (4.6%)</h2>
+            <div class="video-container horizontal">
+                <center><iframe src="https://www.youtube.com/embed/Bf_bbNWmfi8?si=3xL_A6BZFOvR4HmO"></iframe></center>
+                <div class="description">
+                    <p>Je me suis enfin lancé dans le grand bain. J'ai fait une petite rue (rue du Four) en faisant 236 photos. Tous les 5 mètres dans les deux sens au centre de la rue, puis tous les 3 mètres sur 45°de chaque coté et dans les deux sens. Puis le sol dans les deux sens. Le résultat rendait tellement bien que j'ai décidé d'enfin commencer le GRAND PROJET.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Update 2 (Vidéo en horizontal) -->
+        <div class="video-update">
+            <h2>26/07/2024 - ajout de la basilique et d'une rue supplémentaire (14.6%)</h2>
+            <div class="video-container horizontal">
+                <!--<iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+                <div class="description">
+                    <p>Après avoir fait la rue du Four je suis allé faire le tour de la basilique. Le lendemain je suis allé faire la rue Decrès même si le soleil et les voitures garées posent d'énormes problèmes sur le résultat. Suite à cela je suis a 1071 photos.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ajoutez d'autres mises à jour ici -->
+    </div>
+    <footer class="site-footer">
+        Réalisé par moi-même – pour mon propre plaisir
+    </footer></body>
+</html>
