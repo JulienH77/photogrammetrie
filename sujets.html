@@ -820,6 +820,26 @@
             <p>60 photos</p>
             <p>Mai 2024</p>
         </article>
+
+		<article class="card detailed"
+            data-title="Statue de l'aimitié franco-américaine 1921"
+            data-date="Janvier 2024"
+            data-location="Chaumont, Haute-Marne — A côté du square du Boulingrin"
+			data-location-maps="https://maps.app.goo.gl/Dxuyw8MfRD223kXR9"
+            data-photos="88 photos"
+            data-photos-text="Prise de photos refaite. La première fois le calcul a planté. La deuxième fois cela a marché mais l`'éclairage des nouvelles photos n'est pas aussi bon."
+			data-cloud-text="Le socle ne s'est pas fait du tout et des parties manquent sur les personnages."
+            data-model-text=""
+            data-cloud-video="https://www.youtube.com/embed/DYY1ZdxVVV4?si=5cghlAP70-9xpUme"
+            data-model-video=""
+        >
+            <img src="https://i.postimg.cc/P57njwsy/CHAUMONT-statue-amitie.jpg" alt="Statue de l'aimitié franco-américaine 1921">
+            <h3>Statue de l'aimitié franco-américaine 1921 - Chaumont</h3>
+			
+            <p>88 photos</p>
+            <p>Janvier 2024</p>
+        </article>
+
     </div>
 </section>
 
@@ -900,8 +920,10 @@ const closeDrawer = document.getElementById("drawer-close");
 document.querySelectorAll(".card.detailed").forEach(card => {
     card.addEventListener("click", () => {
         document.getElementById("detail-title").textContent = card.dataset.title;
-		document.getElementById("detail-meta").textContent =
-			`${card.dataset.location} — ${card.dataset.date}`;
+		document.getElementById("detail-meta").innerHTML = 
+			`<a href="${card.dataset.locationMaps}" target="_blank" style="color: inherit; text-decoration: underline;">
+				${card.dataset.location}
+			</a> — ${card.dataset.date}`;
 
 		document.getElementById("detail-photos-count").textContent =
 			card.dataset.photos;
